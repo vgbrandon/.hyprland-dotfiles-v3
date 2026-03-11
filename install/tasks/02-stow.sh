@@ -158,6 +158,12 @@ main() {
   info "Ejecutando stow..."
   stow --dir "$STOW_DIR" --target "$TARGET" "${modules[@]}"
   ok "Stow completado."
+
+  if command -v hyprctl >/dev/null 2>&1 && hyprctl monitors >/dev/null 2>&1; then
+    info "Recargando Hyprland..."
+    hyprctl reload
+    ok "Hyprland recargado."
+  fi
 }
 
 main "$@"
