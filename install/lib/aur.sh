@@ -75,7 +75,25 @@ aur_install_list() {
 
   ((${#packages[@]} > 0)) || { warn "La lista AUR está vacía: $list_file"; return 0; }
 
-  local total="${#packages[@]}"
+  # Filtrar paquetes que ya están instalados
+  local to_install=()
+  for pkg in "${packages[@]}"; do
+    if pacman -Q "$pkg" &>/dev/null; then
+      : # ya instalado, omitir
+    else
+      to_install+=("$pkg")
+    fi
+  done
+
+  local already=$(( ${#packages[@]} - ${#to_install[@]} ))
+  (( already > 0 )) && info "$already packages already installed, skipping."
+
+  if (( ${#to_install[@]} == 0 )); then
+    ok "All AUR packages already installed."
+    return 0
+  fi
+
+  local total="${#to_install[@]}"
   local log_file
   log_file="$(mktemp /tmp/dotfiles-aur-XXXXXX.log)"
 
@@ -83,7 +101,7 @@ aur_install_list() {
 
   local i
   for (( i = 0; i < total; i++ )); do
-    local pkg="${packages[$i]}"
+    local pkg="${to_install[$i]}"
     info "[$(( i + 1 ))/$total] $pkg"
 
     if ! "$AUR_HELPER" -S --needed --noconfirm "$pkg" >> "$log_file" 2>&1; then
