@@ -21,3 +21,4 @@ ttf-jetbrains-mono-nerd
 neovim
 fish
 eza
+zoxide
