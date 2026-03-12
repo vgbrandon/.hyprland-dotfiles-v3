@@ -1,5 +1,0 @@
-[Default Applications]
-inode/directory=thunar.desktop
-
-[Removed Associations]
-inode/directory=org.kde.dolphin.desktop;kitty-open.desktop;

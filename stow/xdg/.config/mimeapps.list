@@ -1,0 +1,7 @@
+[Default Applications]
+inode/directory=thunar.desktop
+x-scheme-handler/file=thunar.desktop
+application/octet-stream=dev.zed.Zed.desktop
+
+[Added Associations]
+application/octet-stream=dev.zed.Zed.desktop;
