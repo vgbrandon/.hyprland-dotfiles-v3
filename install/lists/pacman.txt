@@ -17,3 +17,4 @@ xdg-desktop-portal-gtk
 polkit-gnome
 hyprpaper
 quickshell
+ttf-jetbrains-mono-nerd
