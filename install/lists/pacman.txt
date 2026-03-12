@@ -16,3 +16,4 @@ zed
 xdg-desktop-portal-gtk
 polkit-gnome
 hyprpaper
+quickshell
