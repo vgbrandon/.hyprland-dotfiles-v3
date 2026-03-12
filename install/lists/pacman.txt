@@ -12,3 +12,4 @@ superfile
 lazygit
 fastfetch
 github-cli
+zed
