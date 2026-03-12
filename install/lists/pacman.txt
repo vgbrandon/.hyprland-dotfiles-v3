@@ -9,3 +9,4 @@ thunar-shares-plugin
 thunar-volman
 stow
 superfile
+lazygit
