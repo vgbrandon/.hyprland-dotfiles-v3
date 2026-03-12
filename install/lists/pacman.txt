@@ -11,3 +11,4 @@ stow
 superfile
 lazygit
 fastfetch
+github-cli
