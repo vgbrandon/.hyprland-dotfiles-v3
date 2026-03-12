@@ -13,3 +13,4 @@ lazygit
 fastfetch
 github-cli
 zed
+xdg-desktop-portal-gtk
