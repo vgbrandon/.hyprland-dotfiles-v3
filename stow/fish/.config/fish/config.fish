@@ -35,3 +35,6 @@ end
 fish_add_path -m ~/.local/bin
 
 zoxide init fish | source
+
+# opencode
+fish_add_path ~/.opencode/bin
