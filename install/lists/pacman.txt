@@ -10,3 +10,4 @@ thunar-volman
 stow
 superfile
 lazygit
+fastfetch
